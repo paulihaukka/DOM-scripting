@@ -1,0 +1,43 @@
+<!-- initial config -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- make letters show up right -->
+    <meta charset="UTF-8">
+    
+    <!-- tab name -->
+    <title>Grocery list</title>
+    
+    <!-- link css file -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- link js file -->
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    
+    <!-- the white card / container -->
+    <main class="task-card">
+        <h1>Groceries</h1>
+
+        <!-- add stuff / the form -->
+        <form id="task-form" novalidate>
+            
+            <!-- where you type, max 80 chars -->
+            <input id="task-input" type="text" placeholder="Add an item" maxlength="80">
+            
+            <!-- add button-->
+            <button class="add-button" type="submit">Add</button>
+
+        </form>
+
+        <!-- error message (JS fills it) -->
+        <p id="form-error" class="form-error"></p>
+
+        <!-- the list, JS puts the tasks in here -->
+        <ul id="task-list"></ul>
+    </main>
+</body>
+</html>

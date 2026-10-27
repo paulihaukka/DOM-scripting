@@ -1,0 +1,139 @@
+/* makes widths and heights easier to deal with */
+* {
+    box-sizing: border-box;
+}
+
+/* colors */
+body {
+    margin: 0;
+    padding: 10px;
+    background: #303130;
+    color: #172e30;
+    font-family: Arial, sans-serif;
+}
+
+/* container / box */
+.task-card {
+    width: min(100%, 520px);
+    /* shrink the whole card to 75% (won't have to change every part each) */
+    zoom: 0.75;
+    margin: 0 auto;
+    padding: 20px 18px 16px;
+    border-radius: 16px;
+    background: rgb(221, 223, 239);
+}
+
+/* the "Groceries" title */
+h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+/* input and add button side by side */
+form {
+    display: flex;
+    gap: 14px;
+}
+
+/* the text field takes all the space that's left */
+input {
+    min-width: 0;
+    height: 77px;
+    flex: 1;
+    padding: 0 26px;
+    border: 2px solid #e0e5e6;
+    border-radius: 14px;
+    font: inherit;
+    font-size: 25px;
+}
+
+/* red border when the input is invalid (JS adds this class) */
+.invalid {
+    border-color: #c43d3d;
+}
+
+/* the red error text under the form */
+.form-error {
+    margin: 8px 0 0;
+    color: #b52e2e;
+    font-size: 16px;
+}
+
+/* hide the error box when there's no error so it doesn't leave a gap */
+.form-error:empty {
+    display: none;
+}
+
+/* makes buttons feel clickable */
+button {
+    cursor: pointer;
+}
+
+/* the add button */
+.add-button {
+    padding: 0 28px;
+    border: 0;
+    border-radius: 14px;
+    background: #034b1b;
+    color: white;
+    font: inherit;
+    font-size: 25px;
+}
+
+/* get rid of the default bullets and spacing on the list */
+ul {
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* one task per row */
+.task {
+    display: flex;
+    min-height: 82px;
+    align-items: center;
+    gap: 28px;
+    border-bottom: 2px solid #eef0ef;
+    font-size: 25px;
+}
+
+/* task text takes the free space on the row */
+.task span {
+    flex: 1;
+}
+
+/* the button for marking a task done */
+.check-button {
+    width: 35px;
+    height: 35px;
+    flex: 0 0 35px;
+    border: 2px solid #bec9ce;
+    border-radius: 50%;
+    background: white;
+}
+
+/* done task: green circle */
+.task.completed .check-button {
+    border-color: #13816c;
+    background: #13816c;
+}
+
+/* checkmark inside the green circle */
+.task.completed .check-button::after {
+    content: "✓";
+    color: white;
+}
+
+/* done task text goes gray with a line on it */
+.task.completed span {
+    color: #8a9297;
+    text-decoration: line-through;
+}
+
+/* delete task */
+.delete-button {
+    border: 0;
+    background: transparent;
+    color: #9da7ac;
+    font-size: 25px;
+}
